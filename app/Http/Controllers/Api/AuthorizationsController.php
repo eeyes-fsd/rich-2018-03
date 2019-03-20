@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Api\AuthorizationRequest;
@@ -54,9 +55,8 @@ class AuthorizationsController extends Controller
     public function respondWithToken($token)
     {
         return $this->response->array([
-            'access_token' => $token,
-            'token_type' => 'Bearer',
-            'expires_in' => Auth::guard('api')->factory()->getTTL() * 60,
+            'SESSIONID' => $token,
+            'EXPIREDTIME' => Auth::guard('api')->factory()->getTTL() * 60,
         ]);
     }
 }
