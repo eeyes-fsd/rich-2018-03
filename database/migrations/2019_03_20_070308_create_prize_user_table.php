@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePrizeUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('prize_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('role')->default('user');
-            $table->rememberToken();
+            $table->integer('user_id');
+            $table->integer('prize_id');
+            $table->uuid('key')->unique();
+            $table->boolean('available')->comment('是否已兑换');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('prize_user');
     }
 }

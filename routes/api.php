@@ -32,4 +32,10 @@ $api->version('v1', [
         $api->put('authorizations/current', 'AuthorizationsController@update')
             ->name('api.authorizations.update');
     });
+
+    $api->group(['middleware' => 'api.auth'], function ($api) {
+        //需要认证才能访问的接口
+        $api->get('cards', 'CardsController@index')
+            ->name('api.cards.index');
+    });
 });

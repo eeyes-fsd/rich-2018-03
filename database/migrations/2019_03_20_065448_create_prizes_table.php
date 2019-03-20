@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePrizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('prizes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('role')->default('user');
-            $table->rememberToken();
+            $table->string('photo')->comment('奖品图片');
+            $table->string('requirement')->comment('序列化的卡牌需求');
+            $table->integer('limit')->comment('数量上限');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('prizes');
     }
 }

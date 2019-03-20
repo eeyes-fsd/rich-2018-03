@@ -21,7 +21,8 @@ function roulette_choose($list, $amount=1, $choices=[])
             $upper += $value;
             if ($rand >= $lower && $rand < $upper) {
                 $choices[] = $item;
-                unset($list[$item]);
+                //unset($list[$item]);
+                //这里不必去除已抽到的卡片
                 break;
             }
             $lower = $upper;
