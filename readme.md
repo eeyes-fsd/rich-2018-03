@@ -1,7 +1,7 @@
 # e瞳网寻宝思源游戏后端
 ## 项目说明
 校内线上线下结合小游戏后端，主要功能包括抽卡、兑奖等。  
-##部署
+##部署  
 <https://laravel.com/docs/5.7#installation>  
 可能由于部分Composer包的限制，要求 `php >= 7.2`  
 复制 `.env.example` 到 `.env` 并修改其中的数据库、Redis等配置信息  
