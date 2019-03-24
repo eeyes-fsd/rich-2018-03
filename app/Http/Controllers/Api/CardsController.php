@@ -130,14 +130,13 @@ class CardsController extends Controller
         $data = [];
         foreach ($cards as $card) {
             $choice = Card::find($card);
-            echo $choice;
             $data[] = [
                 'id' => $choice->id,
                 'name' => $choice->name,
                 'series' => $choice->series->id,
                 'src' => $choice->photo,
-                'longitude' => $cards->series->longitude,
-                'latitude' => $cards->series->latitude,
+                'longitude' => $choice->series->longitude,
+                'latitude' => $choice->series->latitude,
             ];
         }
         return $this->response->array($data);
