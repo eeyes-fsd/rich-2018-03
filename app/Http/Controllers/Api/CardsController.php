@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use Auth;
 use App\Models\Card;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
 
 class CardsController extends Controller
 {
@@ -15,12 +15,14 @@ class CardsController extends Controller
      */
     public function index()
     {
-        $cards = Card::all(); $temp = [];
-        foreach ($cards as $card) {
-            $temp[] = [$card->id => $card->possibility];
+        if (!$pre_choices = Cache::get('user:'.Auth::id().':pre_choice')) {
+            $cards = Card::all(); $temp = [];
+            foreach ($cards as $card) {
+                $temp += [$card->id => $card->possibility];
+            }
+            $pre_choices = roulette_choose($temp, 3);
+            Cache::put('user:'.Auth::id().':pre_choice', $pre_choices, today()->addDay());
         }
-
-        $pre_choices = roulette_choose($temp, 3);
 
         $data = [];
         foreach ($pre_choices as $choice) {

@@ -16,8 +16,8 @@ class CreateSeriesTable extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('longitude')->comment('刷新位置经度');
-            $table->string('latitude')->comment('刷新位置纬度');
+            $table->double('longitude')->comment('刷新位置经度');
+            $table->double('latitude')->comment('刷新位置纬度');
             $table->timestamps();
         });
     }
