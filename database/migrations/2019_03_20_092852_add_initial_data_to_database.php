@@ -260,6 +260,16 @@ class AddInitialDataToDatabase extends Migration
      */
     public function down()
     {
+        foreach (Card::all() as $card) {
+            $card->delete();
+        }
 
+        foreach (Series::all() as $card) {
+            $card->delete();
+        }
+
+        foreach (User::all() as $card) {
+            $card->delete();
+        }
     }
 }

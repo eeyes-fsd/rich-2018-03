@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "6a316b06-a1f8-465e-a48b-238954030864",
+		"name": "Rich",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_host}}/authorizations",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"authorizations"
+							]
+						},
+						"description": "通过微信小程序的Code获得后端服务器的Access Token"
+					},
+					"response": []
+				},
+				{
+					"name": "更新",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/authorizations/current",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"authorizations",
+								"current"
+							]
+						},
+						"description": "通过已过期的Access Token换取新的可用Access Token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cards",
+			"item": [
+				{
+					"name": "获取每天卡片",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/cards",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"cards"
+							]
+						},
+						"description": "请求接口以获取每天的九张卡片"
+					},
+					"response": [
+						{
+							"name": "获取每天卡片",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/cards",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"cards"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 01:55:32 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 01:55:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"1b3de7697c9fcde7ab6a638c0a5fdcc1b3f5cac1\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"is_known\": true,\n        \"name\": \"东方也有MIT\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 6,\n        \"is_known\": true,\n        \"name\": \"传承，新篇章\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 1,\n        \"is_known\": true,\n        \"name\": \"东方也有MIT\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    },\n    {\n        \"id\": 0,\n        \"is_known\": false,\n        \"name\": null,\n        \"series\": null,\n        \"src\": \"https://img.eeyes.net/\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "获取卡片详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/cards/{id}",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"cards",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "抽取卡片",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cards\": [\n\t\t\"16\",\n\t\t\"1\",\n\t\t\"-1\"\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/cards",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"cards"
+							]
+						},
+						"description": "发送卡片数组来抽取卡片，当日未查看卡片时、或抽取卡片不在预选范围内将抛出 400 BadRequest 异常，已抽取卡片时，将返回抽取的卡片"
+					},
+					"response": [
+						{
+							"name": "抽取卡片",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"cards\": [\n\t\t\"16\",\n\t\t\"1\",\n\t\t\"-1\"\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{api_host}}/cards",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"cards"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 06:20:21 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 06:20:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"8eca505bd300fe005019d50e793075e85671066b\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 16,\n        \"name\": \"康桥还是梧桐？\",\n        \"series\": 3,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"东方也有MIT\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"传承，新篇章\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "获取抽取的卡片",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/cards/my",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"cards",
+								"my"
+							]
+						},
+						"description": "请求此接口获得当日已抽取的卡片，未抽取时将抛出 400 BadReuqest 异常"
+					},
+					"response": [
+						{
+							"name": "获取抽取的卡片",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/cards/my",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"cards",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 06:22:36 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Mar 2019 06:22:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"8eca505bd300fe005019d50e793075e85671066b\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 16,\n        \"name\": \"康桥还是梧桐？\",\n        \"series\": 3,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"东方也有MIT\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"传承，新篇章\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
