@@ -136,6 +136,8 @@ class CardsController extends Controller
                 'name' => $choice->name,
                 'series' => $choice->series->id,
                 'src' => $choice->photo,
+                'longitude' => $cards->series->longitude,
+                'latitude' => $cards->series->latitude,
             ];
         }
         return $this->response->array($data);
