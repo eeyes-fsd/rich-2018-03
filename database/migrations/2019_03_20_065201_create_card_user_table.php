@@ -17,6 +17,7 @@ class CreateCardUserTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('card_id');
+            $table->boolean('valid');
             $table->softDeletes();
             $table->timestamps();
         });

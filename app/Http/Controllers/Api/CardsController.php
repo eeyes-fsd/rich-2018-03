@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use Auth;
 use App\Models\Card;
 use Illuminate\Http\Request;
+use App\Jobs\CalculateDistance;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -117,6 +119,33 @@ class CardsController extends Controller
             throw new BadRequestHttpException('还未抽取卡片');
         }
         return $this->responseWithCards($cards);
+    }
+
+    /**
+     * @param Card $card
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
+    public function update(Card $card, Request $request)
+    {
+        if ($request->has('longitude', 'latitude') && in_array($card->id, $choice = Cache::get('user:'.Auth::id().':choices'))) {
+            $id = DB::table('card_user')->insertGetId([
+                'user_id' => 1, //Auth::id(),
+                'card_id' => $card->id,
+                'valid' => false,
+            ]);
+
+            //在队列中处理，确认位置
+            $from = [$card->series->longitude, $card->series->latitude]; $to = [$request->longitude, $request->latitude];
+            CalculateDistance::dispatch($from, $to, $id);
+            //更新缓存
+            unset($choice[array_search($card->id, $choice)]);
+            Cache::put('user:'.Auth::id().':choices', $choice, today()->addDay());
+
+            return $this->response->created();
+        }
+
+        throw new BadRequestHttpException('未填写位置或卡片不在当日允许范围内');
     }
 
     /**

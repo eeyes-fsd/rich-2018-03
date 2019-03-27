@@ -33,7 +33,7 @@ $api->version('v1', [
             ->name('api.authorizations.update');
     });
 
-    $api->group(['middleware' => 'api.auth'], function ($api) {
+//    $api->group(['middleware' => 'api.auth'], function ($api) {
         //需要认证才能访问的接口
         $api->get('cards', 'CardsController@index')
             ->name('api.cards.index');
@@ -41,7 +41,9 @@ $api->version('v1', [
             ->name('api.cards.store');
         $api->get('cards/my', 'CardsController@my')
             ->name('api.cards.my');
-    });
+        $api->put('cards/{card}', 'CardsController@update')
+            ->name('api.cards.update');
+//    });
 
     $api->get('cards/{card}', 'CardsController@show')
         ->name('api.cards.show');
