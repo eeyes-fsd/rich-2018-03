@@ -21,7 +21,7 @@ class CardsController extends Controller
     public function index()
     {
         if (!$pre_choices = Cache::get('user:'.Auth::id().':pre_choices')) {
-            $cards = Card::all(); $temp = [];
+            $cards = Card::where('limit', '<>', 0)->get(); $temp = [];
             foreach ($cards as $card) {
                 $temp += [$card->id => $card->possibility];
             }
@@ -130,7 +130,7 @@ class CardsController extends Controller
     {
         if ($request->has('longitude', 'latitude') && in_array($card->id, $choice = Cache::get('user:'.Auth::id().':choices'))) {
             $id = DB::table('card_user')->insertGetId([
-                'user_id' => 1, //Auth::id(),
+                'user_id' => Auth::id(),
                 'card_id' => $card->id,
                 'valid' => false,
             ]);
@@ -142,7 +142,13 @@ class CardsController extends Controller
             unset($choice[array_search($card->id, $choice)]);
             Cache::put('user:'.Auth::id().':choices', $choice, today()->addDay());
 
-            return $this->response->created();
+            /** 减少可出卡牌量 */
+            $card->decrement('limit');
+
+            /** 统计已出卡牌量 */
+            $card->increment('exist');
+
+            return $this->responseWithCards([$card->id])->setStatusCode(201);
         }
 
         throw new BadRequestHttpException('未填写位置或卡片不在当日允许范围内');

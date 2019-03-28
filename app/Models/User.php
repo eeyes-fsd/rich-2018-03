@@ -28,7 +28,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function cards()
     {
-        return $this->belongsToMany('App\Models\Card')->withPivot('id','valid', 'revoke', 'deleted_at')->withTimestamps();
+        return $this->belongsToMany('App\Models\Card')->withPivot('id','valid', 'deleted_at')->withTimestamps();
     }
 
     /**

@@ -219,7 +219,7 @@
 								"cards"
 							]
 						},
-						"description": "发送卡片数组来抽取卡片，当日未查看卡片时、或抽取卡片不在预选范围内将抛出 400 BadRequest 异常，已抽取卡片时，将返回抽取的卡片"
+						"description": "发送卡片数组来抽取卡片，当日未查看卡片时、或抽取卡片不在预选范围内将抛出 400 BadRequest 异常"
 					},
 					"response": [
 						{
@@ -388,6 +388,114 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": 16,\n        \"name\": \"康桥还是梧桐？\",\n        \"series\": 3,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"东方也有MIT\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"传承，新篇章\",\n        \"series\": 1,\n        \"src\": \"https://img.eeyes.net\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "获取卡片",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"longitude\": 32.025655652,\n\t\"latitude\": 32.025655652\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/cards/11",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"cards",
+								"11"
+							]
+						},
+						"description": "以PUT方法请求接口，提供经纬度值。后端将验证是否获得卡片。"
+					},
+					"response": [
+						{
+							"name": "获取卡片",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"longitude\": 32.025655652,\n\t\"latitude\": 32.025655652\n}"
+								},
+								"url": {
+									"raw": "{{api_host}}/cards/11",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"cards",
+										"11"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Mar 2019 02:38:05 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Mar 2019 02:38:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"516d0619ec8a207cd5cbbb7a303e88cfad44613e\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"name\": \"印刷术\",\n        \"series\": 2,\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-5.png\",\n        \"longitude\": 108.9837800659,\n        \"latitude\": 34.2468757354\n    }\n]"
 						}
 					]
 				}

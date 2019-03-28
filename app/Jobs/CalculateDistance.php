@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CalculateDistance implements ShouldQueue
 {
@@ -61,8 +62,13 @@ class CalculateDistance implements ShouldQueue
 
         $distance = json_decode($response->getBody(), true)['results']['elements'][0]['distance'];
 
+        Log::debug('Response From Tencent Map Api', [
+            'id' => $this->id,
+            'Response' => $response
+        ]);
+
         if ($distance <= config('game.rules.min_distance')) {
-            DB::table('card_user')->where('id', $this->id)->update(['valid' => true]);
+            DB::table('card_user')->where('id', $this->id)->update(['valid' => 1]);
         }
     }
 }
