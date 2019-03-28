@@ -43,6 +43,9 @@ $api->version('v1', [
             ->name('api.cards.my');
         $api->put('cards/{card}', 'CardsController@update')
             ->name('api.cards.update');
+
+        $api->get('prizes', 'PrizesController@index')
+            ->name('api.prizes.index');
     });
 
     $api->get('cards/{card}', 'CardsController@show')

@@ -16,6 +16,7 @@ class CreatePrizesTable extends Migration
         Schema::create('prizes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('photo')->comment('奖品图片');
+            $table->string('name')->comment('奖品名称');
             $table->string('requirement')->comment('序列化的卡牌需求');
             $table->integer('limit')->comment('数量上限');
             $table->timestamps();
