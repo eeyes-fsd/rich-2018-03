@@ -56,7 +56,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-1.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -64,7 +64,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-2.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -72,7 +72,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-3.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -80,7 +80,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-4.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -88,7 +88,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-5.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 30,
                 'exist' => 0
             ],
             [
@@ -96,7 +96,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/1-6.png',
                 'series_id' => 1,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 10,
                 'exist' => 0
             ],
             [
@@ -104,7 +104,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-1.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 10,
                 'exist' => 0
             ],
             [
@@ -112,7 +112,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-2.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 30,
                 'exist' => 0
             ],
             [
@@ -120,7 +120,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-3.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -128,7 +128,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-4.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -136,7 +136,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-5.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -144,7 +144,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/2-6.png',
                 'series_id' => 2,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1300,
                 'exist' => 0
             ],
             [
@@ -152,7 +152,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-1.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1500,
                 'exist' => 0
             ],
             [
@@ -160,7 +160,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-2.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1500,
                 'exist' => 0
             ],
             [
@@ -168,7 +168,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-3.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 10,
                 'exist' => 0
             ],
             [
@@ -176,7 +176,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-4.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 200,
                 'exist' => 0
             ],
             [
@@ -184,7 +184,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-5.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1500,
                 'exist' => 0
             ],
             [
@@ -192,7 +192,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-6.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1500,
                 'exist' => 0
             ],
             [
@@ -200,7 +200,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-7.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 30,
                 'exist' => 0
             ],
             [
@@ -208,7 +208,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/3-8.png',
                 'series_id' => 3,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1500,
                 'exist' => 0
             ],
             [
@@ -216,7 +216,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/4-1.png',
                 'series_id' => 4,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 10,
                 'exist' => 0
             ],
             [
@@ -224,7 +224,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/4-2.png',
                 'series_id' => 4,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1200,
                 'exist' => 0
             ],
             [
@@ -232,7 +232,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/4-3.png',
                 'series_id' => 4,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1200,
                 'exist' => 0
             ],
             [
@@ -240,7 +240,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/4-4.png',
                 'series_id' => 4,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1200,
                 'exist' => 0
             ],
             [
@@ -248,7 +248,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/4-5.png',
                 'series_id' => 4,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 1200,
                 'exist' => 0
             ],
             [
@@ -256,7 +256,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-1.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -264,7 +264,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-2.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -272,7 +272,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-3.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -280,7 +280,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-4.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -288,7 +288,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-5.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -296,7 +296,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-6.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
             [
@@ -304,7 +304,7 @@ class AddInitialDataToDatabase extends Migration
                 'photo' => 'https://rich.eeyes.xyz/storage/photos/5-7.png',
                 'series_id' => 5,
                 'possibility' => 0.189,
-                'limit' => 100,
+                'limit' => 150,
                 'exist' => 0
             ],
         ];

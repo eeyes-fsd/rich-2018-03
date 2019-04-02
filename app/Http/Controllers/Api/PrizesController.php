@@ -91,6 +91,8 @@ class PrizesController extends Controller
             'updated_at' => now(),
         ]);
 
+        $prize->decrement('limit');
+
         $uuid = DB::table('prize_user')->where('id', $id)->value('key');
 
         return $this->response->array([
