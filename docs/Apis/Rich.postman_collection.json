@@ -209,7 +209,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"cards\": [\n\t\t\"16\",\n\t\t\"1\",\n\t\t\"-1\"\n\t]\n}"
+							"raw": "{\n\t\"cards\": [\n\t\t\"32\",\n\t\t\"1\",\n\t\t\"-1\"\n\t]\n}"
 						},
 						"url": {
 							"raw": "{{api_host}}/cards",
@@ -612,6 +612,64 @@
 							"body": "[\n    {\n        \"name\": null,\n        \"src\": \"https://aaa.bbb.ccc/ddd\",\n        \"requirement\": {\n            \"11\": 1,\n            \"16\": 1\n        },\n        \"remain\": 10\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "查看奖品详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/prizes/1",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"prizes",
+								"1"
+							]
+						},
+						"description": "请求此接口以查看某个奖品详情，应提供 Authorization 请求头，返回内容将包含能否兑换此奖品"
+					},
+					"response": []
+				},
+				{
+					"name": "换取奖品",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{Access Token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/prizes/1",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"prizes",
+								"1"
+							]
+						},
+						"description": "请求此接口以换取相应的奖品，将返回奖品详情与奖券码(UUID)，若无法兑换将抛出 400 Bad Request 错误"
+					},
+					"response": []
 				}
 			]
 		}

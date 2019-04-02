@@ -6,8 +6,8 @@ use Auth;
 use App\Models\Card;
 use Illuminate\Http\Request;
 use App\Jobs\CalculateDistance;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class CardsController extends Controller
@@ -132,7 +132,8 @@ class CardsController extends Controller
             $id = DB::table('card_user')->insertGetId([
                 'user_id' => Auth::id(),
                 'card_id' => $card->id,
-                'valid' => false,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
 
             //在队列中处理，确认位置

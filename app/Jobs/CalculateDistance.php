@@ -54,8 +54,8 @@ class CalculateDistance implements ShouldQueue
         $client = new Client();
         $response = $client->get('https://apis.map.qq.com/ws/distance/v1/' . http_build_query([
                 'mode' => 'walking',
-                'from' => $this->from[0]. ',' . $this->from[1],
-                'to' => $this->to[0]. ',' . $this->to[1],
+                'from' => $this->from[1]. ',' . $this->from[0],
+                'to' => $this->to[1]. ',' . $this->to[0],
                 'key' => config('game.apps.tencent_map_key')
             ])
         );

@@ -9,6 +9,7 @@ namespace App\Models;
  * @property int $id
  * @property string $photo
  * @property string $name
+ * @property string $description
  * @property string $requirement
  * @property int $limit
  * @property \Carbon\Carbon $created_at

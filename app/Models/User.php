@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -23,12 +25,28 @@ class User extends Authenticatable implements JWTSubject
         'weapp_openid', 'weixin_session_key', 'role',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
+
     public function cards()
     {
-        return $this->belongsToMany('App\Models\Card')->withPivot('id','valid', 'deleted_at')->withTimestamps();
+        $cards = DB::table('card_user')->whereNull('deleted_at')->where('user_id', $this->id)->get();
+        $data = new Collection();
+        foreach ($cards as $card) {
+            $card = Card::find($card->card_id);
+            $data->add($card);
+        }
+        return $data;
+    }
+
+
+    public function valid_cards()
+    {
+        $cards = DB::table('card_user')->whereNull('deleted_at')->where('user_id', $this->id)->where('valid', 1)->get();
+        $data = new Collection();
+        foreach ($cards as $card) {
+            $card = Card::find($card->card_id);
+            $data->add($card);
+        }
+        return $data;
     }
 
     /**
@@ -36,7 +54,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function prizes()
     {
-        return $this->belongsToMany('App\Models\Prize');
+        return $this->belongsToMany('App\Models\Prize')->withPivot(['id', 'key', 'available'])->withTimestamps();
     }
 
     /**
@@ -55,3 +73,5 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 }
+
+
