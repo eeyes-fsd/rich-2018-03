@@ -672,6 +672,189 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Series",
+			"item": [
+				{
+					"name": "获取全部卡组",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/series",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"series"
+							]
+						},
+						"description": "请求此接口获取全部卡组信息"
+					},
+					"response": [
+						{
+							"name": "获取全部卡组",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/series",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"series"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 11:50:27 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 11:50:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"22740fe177a999cd2fd0626870d822ab4fca4837\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"大树西迁\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"卡布达巨人\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"亚洲第一食堂\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"一柱擎天\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"书院\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "获取某个牌组已获得卡片",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/series/2",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"series",
+								"2"
+							]
+						},
+						"description": "请求此接口以获取某卡组所有卡片，包含已获得卡片数目的信息"
+					},
+					"response": [
+						{
+							"name": "获取某个牌组已获得卡片",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/series/2",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"series",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 11:58:46 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 11:58:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"1c1bd13f938d4e4fc81fa487fd5a25d3c87cbec1\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 7,\n        \"name\": \"巨人\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-1.png\",\n        \"count\": 0\n    },\n    {\n        \"id\": 8,\n        \"name\": \"女神\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-2.png\",\n        \"count\": 0\n    },\n    {\n        \"id\": 9,\n        \"name\": \"司南\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-3.png\",\n        \"count\": 1\n    },\n    {\n        \"id\": 10,\n        \"name\": \"造纸术\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-4.png\",\n        \"count\": 0\n    },\n    {\n        \"id\": 11,\n        \"name\": \"印刷术\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-5.png\",\n        \"count\": 1\n    },\n    {\n        \"id\": 12,\n        \"name\": \"火药\",\n        \"src\": \"https://rich.eeyes.xyz/storage/photos/2-6.png\",\n        \"count\": 0\n    }\n]"
+						}
+					]
+				}
+			]
 		}
 	]
 }

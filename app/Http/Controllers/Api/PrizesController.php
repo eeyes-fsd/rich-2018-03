@@ -22,7 +22,7 @@ class PrizesController extends Controller
      */
     public function index(Request $request)
     {
-        $prizes = Prize::all(); $user = Auth::user(); $data = [];
+        $prizes = Prize::where('limit', '>', 0)->get(); $user = Auth::user(); $data = [];
         foreach ($prizes as $prize) {
             if ($request->has('can') && !$this->verify_prize($user, $prize)) {
                 continue;
@@ -63,7 +63,7 @@ class PrizesController extends Controller
     public function store(Prize $prize)
     {
         if (!$this->verify_prize(Auth::user(), $prize)) {
-            throw new BadRequestHttpException('该卡片当前不可兑换');
+            throw new BadRequestHttpException('该奖品当前不可兑换');
         }
 
         $cards = [];

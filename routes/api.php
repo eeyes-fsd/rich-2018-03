@@ -44,6 +44,9 @@ $api->version('v1', [
         $api->put('cards/{card}', 'CardsController@update')
             ->name('api.cards.update');
 
+        $api->get('series/{series}', 'SeriesController@show')
+            ->name('api.series.show');
+
         $api->get('prizes', 'PrizesController@index')
             ->name('api.prizes.index');
         $api->get('prizes/{prize}', 'PrizesController@show')
@@ -54,4 +57,6 @@ $api->version('v1', [
 
     $api->get('cards/{card}', 'CardsController@show')
         ->name('api.cards.show');
+    $api->get('series', 'SeriesController@index')
+        ->name('api.series.index');
 });
