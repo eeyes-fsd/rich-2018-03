@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\Card;
 use App\Models\Series;
+use App\Models\Prize;
 use Illuminate\Database\Migrations\Migration;
 
 class AddInitialDataToDatabase extends Migration
@@ -313,36 +314,84 @@ class AddInitialDataToDatabase extends Migration
             Card::create($card);
         }
 
-//        $prizes = [
-//            [
-//                'name' => '一柱擎天一等奖',
-//                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
-//                'description' => '就是个奖品',
-//                'requirement' => serialize(),
-//                'limit' => 2
-//            ],
-//            [
-//                'name' => '一柱擎天一等奖',
-//                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
-//                'description' => '就是个奖品',
-//                'requirement' => serialize(),
-//                'limit' => 2
-//            ],
-//            [
-//                'name' => '一柱擎天一等奖',
-//                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
-//                'description' => '就是个奖品',
-//                'requirement' => serialize(),
-//                'limit' => 2
-//            ],
-//            [
-//                'name' => '一柱擎天一等奖',
-//                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
-//                'description' => '就是个奖品',
-//                'requirement' => serialize(),
-//                'limit' => 2
-//            ],
-//        ];
+        $prizes = [
+            [
+                'name' => '一柱擎天一等奖',
+                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    21 => 1,
+                    22 => 1,
+                    23 => 1,
+                    24 => 1,
+                    25 => 1,
+                ]]),
+                'limit' => 2
+            ],
+            [
+                'name' => '卡布达巨人一等奖',
+                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    7 => 1,
+                    8 => 1,
+                    9 => 1,
+                    10 => 1,
+                    11 => 1,
+                    12 => 1,
+                ]]),
+                'limit' => 1
+            ],
+            [
+                'name' => '大树西迁一等奖',
+                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    1 => 1,
+                    2 => 1,
+                    3 => 1,
+                    4 => 1,
+                    5 => 1,
+                    6 => 1,
+                ]]),
+                'limit' => 1
+            ],
+            [
+                'name' => '传奇书院一等奖',
+                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    26 => 1,
+                    27 => 1,
+                    28 => 1,
+                    29 => 1,
+                    30 => 1,
+                    31 => 1,
+                    32 => 1,
+                ]]),
+                'limit' => 1
+            ],
+            [
+                'name' => '两苑一等奖',
+                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    13 => 1,
+                    14 => 1,
+                    15 => 1,
+                    16 => 1,
+                    17 => 1,
+                    18 => 1,
+                    19 => 1,
+                    20 => 1,
+                ]]),
+                'limit' => 1
+            ],
+        ];
+
+        foreach ($prizes as $prize) {
+            Prize::create($prize);
+        }
     }
 
     /**

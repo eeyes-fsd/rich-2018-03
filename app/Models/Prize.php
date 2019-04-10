@@ -10,14 +10,14 @@ namespace App\Models;
  * @property string $photo
  * @property string $name
  * @property string $description
- * @property string $requirement
+ * @property string $requirements
  * @property int $limit
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
 class Prize extends Model
 {
-    public function getRequirementAttribute($requirement)
+    public function getRequirementsAttribute($requirement)
     {
         return unserialize($requirement);
     }

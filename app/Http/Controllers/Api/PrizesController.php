@@ -32,7 +32,7 @@ class PrizesController extends Controller
                 'name' => $prize->name,
                 'description' => $prize->description,
                 'src' => $prize->photo,
-                'requirement' => $prize->requirement,
+                'requirement' => $prize->requirements,
                 'remain' => $prize->limit,
             ];
         }
@@ -54,7 +54,7 @@ class PrizesController extends Controller
             'name' => $prize->name,
             'description' => $prize->description,
             'src' => $prize->photo,
-            'requirement' => $prize->requirement,
+            'requirement' => $prize->requirements,
             'remain' => $prize->limit,
             'can' => $this->verify_prize(Auth::user(), $prize),
         ]);
@@ -123,11 +123,18 @@ class PrizesController extends Controller
             $cards[$card->id] += 1;
         }
 
-        //验证是否可以兑换
-        foreach ($prize->requirement as $card => $number) {
-            if (!isset($cards[$card]) || $cards[$card] < $number) {
-                return false;
+        $signs = [];
+        foreach ($prize->requirements as $requirement) {
+            foreach ($requirement as $card => $number) {
+                if (!isset($cards[$card]) || $cards[$card] < $number) {
+                    array_push($signs, false);
+                    break;
+                }
             }
+        }
+
+        if (count($signs) == count($prize->requirements)) {
+            return false;
         }
 
         return true;
