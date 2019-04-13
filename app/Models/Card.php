@@ -9,7 +9,7 @@ namespace App\Models;
  *
  * @property int $id
  * @property string $name
- * @property string $photo
+ * @property string $no
  * @property int $series_id
  * @property double $possibility
  * @property int $limit

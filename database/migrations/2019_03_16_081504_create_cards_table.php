@@ -16,7 +16,7 @@ class CreateCardsTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->comment('卡牌名');
-            $table->string('photo')->comment('牌组图片');
+            $table->string('no')->comment('卡牌编号');
             $table->integer('series_id')->comment('牌组ID');
             $table->double('possibility')->comment('刷新概率');
             $table->integer('limit')->comment('上限数目');

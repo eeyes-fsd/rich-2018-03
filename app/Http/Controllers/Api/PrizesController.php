@@ -37,6 +37,25 @@ class PrizesController extends Controller
             ];
         }
 
+        return $this->response->array($data);
+    }
+
+    public function my()
+    {
+        $prizes = DB::table('prize_user')->where('user_id', Auth::id())->where('available', 1)->get();
+
+        $data = [];
+        foreach ($prizes as $prize) {
+            $item = Prize::find($prize->prize_id);
+            $data[] = [
+                'id' => $item->id,
+                'name' => $item->name,
+                'description' =>  $item->description,
+                'src' => $item->photo,
+                'key' => $prize->key,
+                'qr_code' => 'http://qr.liantu.com/api.php?text=' . $prize->key,
+            ];
+        }
 
         return $this->response->array($data);
     }
@@ -67,7 +86,7 @@ class PrizesController extends Controller
         }
 
         $cards = [];
-        foreach ($prize->requirement as $card => $number) {
+        foreach ($prize->requirements[0] as $card => $number) {
             for ($i = 0; $i < $number; $i++) {
                 array_push($cards, $card);
             }
@@ -96,7 +115,9 @@ class PrizesController extends Controller
         $uuid = DB::table('prize_user')->where('id', $id)->value('key');
 
         return $this->response->array([
-            'uuid' => $uuid,
+            'id' => $prize->id,
+            'key' => $uuid,
+            'qr_code' => 'http://qr.liantu.com/api.php?text=' . $uuid,
             'name' => $prize->name,
             'description' => $prize->description,
             'src' => $prize->photo,

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use Auth;
 use App\Models\Card;
 use Illuminate\Http\Request;
 use App\Jobs\CalculateDistance;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class CardsController extends Controller
@@ -37,7 +37,7 @@ class CardsController extends Controller
                 'is_known' => true,
                 'name' => $card->name,
                 'series' => $card->series->id,
-                'src' => $card->photo,
+                'src' => config('app.url') . '/storage/cards/thumbnails/' . $card->no . '.jpg',
             ];
         }
 
@@ -47,7 +47,7 @@ class CardsController extends Controller
                 'is_known' => false,
                 'name' => null,
                 'series' => null,
-                'src' => 'https://img.eeyes.net/',
+                'src' => config('app.url') . '/storage/cards/0-0.jpg',
             ];
         }
 
@@ -66,7 +66,7 @@ class CardsController extends Controller
             'id' => $card->id,
             'name' => $card->name,
             'series' => $card->series_id,
-            'src' => $card->photo
+            'src' => config('app.url') . '/storage/cards/photos/' . $card->no . '.jpg',
         ]);
     }
 
@@ -170,7 +170,7 @@ class CardsController extends Controller
                 'id' => $choice->id,
                 'name' => $choice->name,
                 'series' => $choice->series->id,
-                'src' => $choice->photo,
+                'src' => config('app.url') . '/storage/cards/photos/' . $choice->no . '.jpg',
                 'longitude' => $choice->series->longitude,
                 'latitude' => $choice->series->latitude,
             ];

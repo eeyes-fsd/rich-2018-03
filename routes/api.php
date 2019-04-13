@@ -49,6 +49,8 @@ $api->version('v1', [
 
         $api->get('prizes', 'PrizesController@index')
             ->name('api.prizes.index');
+        $api->get('prizes/my', 'PrizesController@my')
+            ->name('api.prizes.my');
         $api->get('prizes/{prize}', 'PrizesController@show')
             ->name('api.prizes.show');
         $api->post('prizes/{prize}', 'PrizesController@store')

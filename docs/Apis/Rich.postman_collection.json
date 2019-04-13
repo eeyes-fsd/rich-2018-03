@@ -188,7 +188,68 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "获取卡片详情",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/cards/12",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"cards",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 11:40:05 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 11:40:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"056d5928b52739ed79597ed5f84df0d0f704d338\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"name\": \"火药\",\n    \"series\": 2,\n    \"src\": \"http://localhost/storage/cards/photos/2-6.jpg\"\n}"
+						}
+					]
 				},
 				{
 					"name": "抽取卡片",
@@ -209,7 +270,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"cards\": [\n\t\t\"32\",\n\t\t\"1\",\n\t\t\"-1\"\n\t]\n}"
+							"raw": "{\n\t\"cards\": [\n\t\t\"12\",\n\t\t\"-1\",\n\t\t\"-1\"\n\t]\n}"
 						},
 						"url": {
 							"raw": "{{api_host}}/cards",
@@ -414,13 +475,13 @@
 							"raw": "{\n\t\"longitude\": 32.025655652,\n\t\"latitude\": 32.025655652\n}"
 						},
 						"url": {
-							"raw": "{{api_host}}/cards/11",
+							"raw": "{{api_host}}/cards/12",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"cards",
-								"11"
+								"12"
 							]
 						},
 						"description": "以PUT方法请求接口，提供经纬度值。后端将验证是否获得卡片。"
@@ -643,6 +704,102 @@
 					"response": []
 				},
 				{
+					"name": "查看我的奖券",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_host}}/prizes/my",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"prizes",
+								"my"
+							]
+						},
+						"description": "请求此接口以获取当前已兑换奖券，应提供 Authorization 请求头"
+					},
+					"response": [
+						{
+							"name": "查看我的奖券",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{api_host}}/prizes/my",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"prizes",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 08:39:41 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 08:39:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "ETag",
+									"value": "\"3733192f36509a781c2350c1f23cf0fed6c0d790\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"大树西迁一等奖\",\n        \"description\": \"就是个奖品\",\n        \"src\": \"https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg\",\n        \"key\": \"9691c108-5dc5-11e9-b40c-54ee75d582e7\",\n        \"qr_code\": \"http://qr.liantu.com/api.php?text=9691c108-5dc5-11e9-b40c-54ee75d582e7\"\n    }\n]"
+						}
+					]
+				},
+				{
 					"name": "换取奖品",
 					"request": {
 						"method": "POST",
@@ -658,13 +815,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{api_host}}/prizes/1",
+							"raw": "{{api_host}}/prizes/3",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"prizes",
-								"1"
+								"3"
 							]
 						},
 						"description": "请求此接口以换取相应的奖品，将返回奖品详情与奖券码(UUID)，若无法兑换将抛出 400 Bad Request 错误"
@@ -774,13 +931,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{api_host}}/series/2",
+							"raw": "{{api_host}}/series/1",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"series",
-								"2"
+								"1"
 							]
 						},
 						"description": "请求此接口以获取某卡组所有卡片，包含已获得卡片数目的信息"

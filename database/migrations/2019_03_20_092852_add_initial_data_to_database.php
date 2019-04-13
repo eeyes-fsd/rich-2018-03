@@ -54,7 +54,7 @@ class AddInitialDataToDatabase extends Migration
         $cards = [
             [
                 'name' => '东方也有MIT',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-1.png',
+                'no' => '1-1',
                 'series_id' => 1,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -62,7 +62,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '徐家汇开始的迁徙',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-2.png',
+                'no' => '1-2',
                 'series_id' => 1,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -70,7 +70,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '定居，西安城',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-3.png',
+                'no' => '1-3',
                 'series_id' => 1,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -78,7 +78,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '成立，西安交大',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-4.png',
+                'no' => '1-4',
                 'series_id' => 1,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -86,7 +86,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '下沉，再升起',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-5.png',
+                'no' => '1-5',
                 'series_id' => 1,
                 'possibility' => 0.15,
                 'limit' => 30,
@@ -94,7 +94,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '传承，新篇章',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/1-6.png',
+                'no' => '1-6',
                 'series_id' => 1,
                 'possibility' => 0.03,
                 'limit' => 10,
@@ -102,7 +102,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '巨人',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-1.png',
+                'no' => '2-1',
                 'series_id' => 2,
                 'possibility' => 0.03,
                 'limit' => 10,
@@ -110,7 +110,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '女神',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-2.png',
+                'no' => '2-2',
                 'series_id' => 2,
                 'possibility' => 0.15,
                 'limit' => 30,
@@ -118,7 +118,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '司南',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-3.png',
+                'no' => '2-3',
                 'series_id' => 2,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -126,7 +126,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '造纸术',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-4.png',
+                'no' => '2-4',
                 'series_id' => 2,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -134,7 +134,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '印刷术',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-5.png',
+                'no' => '2-5',
                 'series_id' => 2,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -142,7 +142,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '火药',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/2-6.png',
+                'no' => '2-6',
                 'series_id' => 2,
                 'possibility' => 5.4,
                 'limit' => 1300,
@@ -150,7 +150,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '不来块掉渣饼嘛？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-1.png',
+                'no' => '3-1',
                 'series_id' => 3,
                 'possibility' => 6.6,
                 'limit' => 1500,
@@ -158,7 +158,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '饭后来块大鸡排？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-2.png',
+                'no' => '3-2',
                 'series_id' => 3,
                 'possibility' => 6.6,
                 'limit' => 1500,
@@ -166,7 +166,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '好吃还是梧桐苑！',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-3.png',
+                'no' => '3-3',
                 'series_id' => 3,
                 'possibility' => 0.03,
                 'limit' => 10,
@@ -174,7 +174,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '康桥还是梧桐？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-4.png',
+                'no' => '3-4',
                 'series_id' => 3,
                 'possibility' => 0.85,
                 'limit' => 200,
@@ -182,7 +182,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '米线三鲜还是麻辣？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-5.png',
+                'no' => '3-5',
                 'series_id' => 3,
                 'possibility' => 6.6,
                 'limit' => 1500,
@@ -190,7 +190,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '铁板饭今天人多吗？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-6.png',
+                'no' => '3-6',
                 'series_id' => 3,
                 'possibility' => 6.6,
                 'limit' => 1500,
@@ -198,7 +198,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '亚洲第一康桥苑！',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-7.png',
+                'no' => '3-7',
                 'series_id' => 3,
                 'possibility' => 0.12,
                 'limit' => 30,
@@ -206,7 +206,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '蒸菜还是清真食堂？',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/3-8.png',
+                'no' => '3-8',
                 'series_id' => 3,
                 'possibility' => 6.6,
                 'limit' => 1500,
@@ -214,7 +214,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '主楼E',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/4-1.png',
+                'no' => '4-1',
                 'series_id' => 4,
                 'possibility' => 0.03,
                 'limit' => 10,
@@ -222,7 +222,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '主楼A',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/4-2.png',
+                'no' => '4-2',
                 'series_id' => 4,
                 'possibility' => 4.5,
                 'limit' => 1200,
@@ -230,7 +230,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '主楼B',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/4-3.png',
+                'no' => '4-3',
                 'series_id' => 4,
                 'possibility' => 4.5,
                 'limit' => 1200,
@@ -238,7 +238,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '主楼C',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/4-4.png',
+                'no' => '4-4',
                 'series_id' => 4,
                 'possibility' => 4.5,
                 'limit' => 1200,
@@ -246,7 +246,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '主楼D',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/4-5.png',
+                'no' => '4-5',
                 'series_id' => 4,
                 'possibility' => 4.5,
                 'limit' => 1200,
@@ -254,7 +254,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '崇实书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-1.png',
+                'no' => '5-1',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -262,7 +262,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '南洋书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-2.png',
+                'no' => '5-2',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -270,7 +270,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '励志书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-3.png',
+                'no' => '5-3',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -278,7 +278,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '彭康书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-4.png',
+                'no' => '5-4',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -286,7 +286,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '钱学森书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-5.png',
+                'no' => '5-5',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -294,7 +294,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '仲英书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-6.png',
+                'no' => '5-6',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -302,7 +302,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '文治书院',
-                'photo' => 'https://rich.eeyes.xyz/storage/photos/5-7.png',
+                'no' => '5-7',
                 'series_id' => 5,
                 'possibility' => 0.63,
                 'limit' => 150,
@@ -317,7 +317,7 @@ class AddInitialDataToDatabase extends Migration
         $prizes = [
             [
                 'name' => '一柱擎天一等奖',
-                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
                 'description' => '就是个奖品',
                 'requirements' => serialize([[
                     21 => 1,
@@ -330,7 +330,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '卡布达巨人一等奖',
-                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
                 'description' => '就是个奖品',
                 'requirements' => serialize([[
                     7 => 1,
@@ -344,7 +344,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '大树西迁一等奖',
-                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
                 'description' => '就是个奖品',
                 'requirements' => serialize([[
                     1 => 1,
@@ -358,7 +358,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '传奇书院一等奖',
-                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
                 'description' => '就是个奖品',
                 'requirements' => serialize([[
                     26 => 1,
@@ -373,7 +373,7 @@ class AddInitialDataToDatabase extends Migration
             ],
             [
                 'name' => '两苑一等奖',
-                'photo' => 'https://i0.hdslb.com/bfs/article/33fef42dbebeae2bbf020c47c5627bb3756dcb2e.jpg',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
                 'description' => '就是个奖品',
                 'requirements' => serialize([[
                     13 => 1,
