@@ -1012,6 +1012,127 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "创建反馈",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Access Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contact",
+									"value": "1003132577",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "什么沙雕玩意",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_host}}/feedback",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"feedback"
+							]
+						},
+						"description": "提供Authorization请求头以标识用户"
+					},
+					"response": [
+						{
+							"name": "创建反馈",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Access Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "contact",
+											"value": "1003132577",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "什么沙雕玩意",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_host}}/feedback",
+									"host": [
+										"{{api_host}}"
+									],
+									"path": [
+										"feedback"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 12:57:04 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2019 12:57:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "ETag",
+									"value": "\"da39a3ee5e6b4b0d3255bfef95601890afd80709\""
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
 		}
 	]
 }

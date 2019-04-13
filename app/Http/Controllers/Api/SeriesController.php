@@ -39,7 +39,7 @@ class SeriesController extends Controller
             $data[] = [
                 'id' => $card->id,
                 'name' => $card->name,
-                'src' => $card->photo,
+                'src' => config('app.url') . '/storage/cards/photos/' . $card->no . '.jpg',
                 'count' => $card->count ? $card->count : 0,
             ];
         }

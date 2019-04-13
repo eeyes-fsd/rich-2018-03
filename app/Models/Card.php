@@ -23,7 +23,7 @@ class Card extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Series()
+    public function series()
     {
         return $this->belongsTo('App\Models\Series');
     }

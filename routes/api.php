@@ -55,6 +55,9 @@ $api->version('v1', [
             ->name('api.prizes.show');
         $api->post('prizes/{prize}', 'PrizesController@store')
             ->name('api.prizes.store');
+
+        $api->post('feedback', 'FeedbackController@store')
+            ->name('api.feedback.store');
     });
 
     $api->get('cards/{card}', 'CardsController@show')

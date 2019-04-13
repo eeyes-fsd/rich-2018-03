@@ -387,6 +387,22 @@ class AddInitialDataToDatabase extends Migration
                 ]]),
                 'limit' => 1
             ],
+            [
+                'name' => '两苑一等奖',
+                'photo' => config('app.url') . '/storage/prizes/prize_1.svg',
+                'description' => '就是个奖品',
+                'requirements' => serialize([[
+                    13 => 1,
+                    14 => 1,
+                    15 => 1,
+                    16 => 1,
+                    17 => 1,
+                    18 => 1,
+                    19 => 1,
+                    20 => 1,
+                ]]),
+                'limit' => 1
+            ],
         ];
 
         foreach ($prizes as $prize) {
