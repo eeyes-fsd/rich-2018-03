@@ -16,7 +16,7 @@ class CreateFeedbackTable extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('contact')->comment('联系方式');
+            $table->string('contact')->nullable()->comment('联系方式');
             $table->text('body')->comment('反馈内容');
             $table->timestamps();
         });
