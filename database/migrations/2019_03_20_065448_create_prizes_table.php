@@ -18,7 +18,7 @@ class CreatePrizesTable extends Migration
             $table->string('photo')->comment('奖品图片');
             $table->string('name')->comment('奖品名称');
             $table->text('description')->comment('奖品描述');
-            $table->string('requirements')->comment('序列化的卡牌需求');
+            $table->text('requirements')->comment('序列化的卡牌需求');
             $table->integer('limit')->comment('数量上限');
             $table->timestamps();
         });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Card;
 use Auth;
 use Exception;
 use App\Models\Prize;
@@ -32,7 +33,6 @@ class PrizesController extends Controller
                 'name' => $prize->name,
                 'description' => $prize->description,
                 'src' => $prize->photo,
-                'requirement' => $prize->requirements,
                 'remain' => $prize->limit,
             ];
         }
@@ -73,7 +73,6 @@ class PrizesController extends Controller
             'name' => $prize->name,
             'description' => $prize->description,
             'src' => $prize->photo,
-            'requirement' => $prize->requirements,
             'remain' => $prize->limit,
             'can' => $this->verify_prize(Auth::user(), $prize),
         ]);
@@ -85,8 +84,27 @@ class PrizesController extends Controller
             throw new BadRequestHttpException('该奖品当前不可兑换');
         }
 
+        $own_cards = Auth::user()->valid_cards();
         $cards = [];
-        foreach ($prize->requirements[0] as $card => $number) {
+
+        //整理卡片数量
+        foreach ($own_cards as $card) {
+            if (!isset($cards[$card->id])) {
+                $cards[$card->id] = 0;
+            }
+            $cards[$card->id] += 1;
+        }
+
+        $cards_to_delete = [];
+        foreach ($prize->requirements as $requirement) {
+            if ($this->verify_requirement($cards, $requirement)) {
+                $cards_to_delete = $requirement;
+                break;
+            }
+        }
+
+        $cards = [];
+        foreach ($cards_to_delete as $card => $number) {
             for ($i = 0; $i < $number; $i++) {
                 array_push($cards, $card);
             }
@@ -146,11 +164,8 @@ class PrizesController extends Controller
 
         $signs = [];
         foreach ($prize->requirements as $requirement) {
-            foreach ($requirement as $card => $number) {
-                if (!isset($cards[$card]) || $cards[$card] < $number) {
-                    array_push($signs, false);
-                    break;
-                }
+            if (!$this->verify_requirement($cards, $requirement)) {
+                array_push($signs, false);
             }
         }
 
@@ -160,4 +175,15 @@ class PrizesController extends Controller
 
         return true;
     }
+
+    private function verify_requirement($cards, $requirement) {
+        foreach ($requirement as $item => $count) {
+            if (!isset($cards[$item]) || $cards[$item] < $count) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }

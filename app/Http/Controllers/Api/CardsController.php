@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Card;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Jobs\CalculateDistance;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class CardsController extends Controller
@@ -104,7 +106,21 @@ class CardsController extends Controller
         }
 
         Cache::put('user:'.Auth::id().':choices', $cards, today()->addDay());
-        return $this->responseWithCards($cards);
+
+        $data = [];
+        foreach ($cards as $card) {
+            $choice = Card::find($card);
+            $data[] = [
+                'id' => $choice->id,
+                'name' => $choice->name,
+                'series' => $choice->series->id,
+                'src' => config('app.url') . '/storage/cards/thumbnails/' . $choice->no . '.jpg',
+                'longitude' => $choice->series->longitude,
+                'latitude' => $choice->series->latitude,
+            ];
+        }
+
+        return $this->response->array($data);
     }
 
     /**
@@ -114,31 +130,28 @@ class CardsController extends Controller
      */
     public function my()
     {
-        $cards = Cache::get('user:'.Auth::id().':choices');
-        if (is_null($cards)) {
-            throw new BadRequestHttpException('还未抽取卡片');
-        }
-        return $this->responseWithCards($cards);
+        $cards = Auth::user()->valid_cards()->count();
+
+        return $this->response->array([
+            'cards_count' => $cards,
+        ]);
     }
 
     /**
      * @param Card $card
      * @param Request $request
-     * @return \Dingo\Api\Http\Response
+     * @return mixed
      */
     public function update(Card $card, Request $request)
     {
         if ($request->has('longitude', 'latitude') && in_array($card->id, $choice = Cache::get('user:'.Auth::id().':choices'))) {
-            $id = DB::table('card_user')->insertGetId([
+            DB::table('card_user')->insertGetId([
                 'user_id' => Auth::id(),
                 'card_id' => $card->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
 
-            //在队列中处理，确认位置
-            $from = [$card->series->longitude, $card->series->latitude]; $to = [$request->longitude, $request->latitude];
-            CalculateDistance::dispatch($from, $to, $id);
             //更新缓存
             unset($choice[array_search($card->id, $choice)]);
             Cache::put('user:'.Auth::id().':choices', $choice, today()->addDay());
